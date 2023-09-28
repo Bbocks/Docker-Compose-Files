@@ -13,7 +13,7 @@ services:
     devices:
         - /dev/net/tun
     volumes:
-        - /mnt/data/Plex/mullvad_config_linux_us_nyc:/data/vpn
+        - /mnt/data:/data/vpn
         # File unzipped before from Mullvad, it's location. Make sure to keep the ":/data/vpn" part at the end
     ports:
         - 9117:9117                         # Opening port for to access hypothetical Transmission container that would be routing through this VPN
