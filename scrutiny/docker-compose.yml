@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+  scrutiny:
+    container_name: scrutiny
+    restart: unless-stopped
+    image: ghcr.io/analogj/scrutiny:v0.7.1-omnibus
+    cap_add:
+      - SYS_RAWIO
+      - SYS_ADMIN
+    ports:
+      - "8079:8080" # webapp
+      - "8086:8086" # influxDB admin
+    volumes:
+      - /run/udev:/run/udev:ro
+      - ./config:/opt/scrutiny/config
+      - ./influxdb:/opt/scrutiny/influxdb
+    devices:
+      - "/dev/sdb"
+      - "/dev/sdc"
+      - "/dev/sdd"
+      - "/dev/sde"
+#    notify:
+#      urls:
+#        - "discord://z94qnk14_aqsIuZ1MOVw906iJDF2cVFVc22cLjLfHdTPWmkTMHALeXcPiAVCyhX3OmHa@1119673592985157674"

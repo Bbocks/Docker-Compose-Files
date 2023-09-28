@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  homepage:
+    image: ghcr.io/benphelps/homepage:latest
+    container_name: homepage
+    ports:
+      - 3000:3000
+    volumes:
+      - /home/brett/docker/homepage:/app/config # Make sure your local config directory exists
+      - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations
+      - /home/brett/docker/homepage/icons:/app/public/icons
+      - /home/brett/docker/homepage/images:/app/public/images
+      - /mnt/zfs:/mnt/zfs
+      - /mnt/Prox-Backup:/mnt/Prox-Backup
+    restart: unless-stopped
