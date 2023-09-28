@@ -10,6 +10,5 @@ services:
       - WEBUI_PORT=8080
     volumes:
       - /home/brett/docker/qbitt:/config
-      - /mnt/data/Plex/Torrents:/downloads
     network_mode: container:openvpn-client
     restart: unless-stopped
