@@ -4,7 +4,7 @@ services:
     image: oznu/cloudflare-ddns:latest
     restart: always
     environment:
-      - API_KEY=DF_b2tFxMRron-4D6HrFI_acAvO7_GKzTG5CEOnF
-      - ZONE=bockhomelab.com
+      - API_KEY=
+      - ZONE=
       - PROXIED=true
     container_name: cloudflare-ddns
